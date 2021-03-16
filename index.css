@@ -36,8 +36,7 @@ table thead th {
    padding: 0.25em 0.75em; 
 }
 table thead {
-   background-color: #EBF4FB ;
-   
+   background-color: #EBF4FB ; 
 }
 
 table tbody td:first-child  {
@@ -51,4 +50,9 @@ caption {
       padding: 0.5em 0.5em; 
       font-weight: bold;
       font-size: 1.2em;
+}
+
+img {
+   height: 100px;
+   width: 80px;
 }
