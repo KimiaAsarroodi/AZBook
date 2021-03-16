@@ -41,8 +41,9 @@ table thead {
 }
 
 table tbody td:first-child  {
-   text-align: center;
-   padding: 0.5em 0em;   
+   text-align: left;
+   padding: 0.5em 0em; 
+   font-style: italic;
 }
 
 caption {
