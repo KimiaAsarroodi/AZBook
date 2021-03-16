@@ -24,9 +24,7 @@ div#listBox {
 table {
    border: collapse; 
    border-spacing: 0;
-   
 }
-
 table tbody td{
    border-top: 1pt solid #95BEF0;   
    line-height: 1.5em;
@@ -39,6 +37,7 @@ table thead th {
 }
 table thead {
    background-color: #EBF4FB ;
+   
 }
 
 table tbody td:first-child  {
