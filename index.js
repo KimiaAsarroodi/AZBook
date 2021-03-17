@@ -63,11 +63,11 @@ function writeTable(list) {
 }
 function search(){
 //console.log("search function");
-const searchBar = document.forms['search-books'].querySelector('input');
-searchBar.addEventListener('keyup',function(e){
+//const searchBar = document.forms['search-books'].querySelector('input');
+document.getElementById("btn").addEventListener('click',function(e){
   //console.log("inside event");
-  const term = e.target.value.toLowerCase();
-  console.log(term);
+  const term = document.getElementById("fname").value.toLowerCase();
+  console.log(document.getElementById("fname").value.toLowerCase());
   //const books = document.querySelector('td:nth-child(3)');
  const books = document.getElementById("myTable").rows[1].cells.item(2).innerHTML;
 
@@ -78,7 +78,7 @@ searchBar.addEventListener('keyup',function(e){
     console.log(books.toLowerCase().indexOf(term));
     if(books.toLowerCase().indexOf(term)!= -1){
       console.log("matches");
-      document.getElementById("myTable").rows[1].cells.item(2).style.backgroundColor = "red";
+      document.getElementById("myTable").rows[1].style.backgroundColor = "red";
     }
     else{
       console.log("its not");
