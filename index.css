@@ -22,14 +22,18 @@ div#listBox {
    }
 
 table {
+   width: 100%;
    border: collapse; 
    border-spacing: 0;
+   
 }
 table tbody td{
    border-top: 1pt solid #95BEF0;   
    line-height: 1.5em;
    vertical-align: middle;
    padding: 0.5em 0.75em;
+  
+   
 }
 table thead th {
    text-align: left;
@@ -43,16 +47,50 @@ table tbody td:first-child  {
    text-align: left;
    padding: 0.5em 0em; 
    font-style: italic;
+   
+}
+table tbody td:nth-child(4)  {
+   text-align: left;
+   padding: 0.5em 0em; 
+   font-style: italic;
+   white-space:nowrap; 
+   display: inline-block;
 }
 
 caption {
-   background-color: #95BEF0;
+      background-color: #95BEF0;
       padding: 0.5em 0.5em; 
       font-weight: bold;
       font-size: 1.2em;
 }
 
 img {
-   height: 100px;
-   width: 80px;
+   height: 50px;
+   width: 40px;
+   
+}
+
+img#cart {
+   height: 10%;
+   width: 10%;
+}
+@media 
+only screen and (max-width: 967px),
+(min-device-width: 967px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border-right: 1px solid #ccc; 
+      border-left: 1px solid #ccc;}
+   caption{display: block;}
 }

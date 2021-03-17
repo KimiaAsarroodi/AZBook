@@ -15,7 +15,7 @@ function getJsonObject(path, success, error) {
 
 function writeTable(list) {
   for (var i = 0; i < list.length; i++) {
-    console.log(list[i]);
+    //console.log(list[i]);
     var tbodyRef = document.getElementById('myTable').getElementsByTagName('tbody')[0];
     var newRow = tbodyRef.insertRow();
     var newCheck = newRow.insertCell();
@@ -44,7 +44,7 @@ function writeTable(list) {
     //newRate.innerHTML=bookList[i].rating;
     }
     var count = 5 - bookList[i].rating;
-    console.log(count);
+    //console.log(count);
     for(var k=0; k< count;k++){
       var unrate = document.createElement('img');
       unrate.src = "images/outline-star-16.ico";
@@ -61,8 +61,34 @@ function writeTable(list) {
 
 
 }
+function search(){
+//console.log("search function");
+const searchBar = document.forms['search-books'].querySelector('input');
+searchBar.addEventListener('keyup',function(e){
+  //console.log("inside event");
+  const term = e.target.value.toLowerCase();
+  console.log(term);
+  //const books = document.querySelector('td:nth-child(3)');
+ const books = document.getElementById("myTable").rows[1].cells.item(2).innerHTML;
 
+  //alert(books);
+  // Array.from(books).forEach(function(book){
+   // console.log("where you wanted to be");
+    //console.log(books);
+    console.log(books.toLowerCase().indexOf(term));
+    if(books.toLowerCase().indexOf(term)!= -1){
+      console.log("matches");
+      document.getElementById("myTable").rows[1].cells.item(2).style.backgroundColor = "red";
+    }
+    else{
+      console.log("its not");
+      document.getElementById("myTable").rows[1].cells.item(2).style.backgroundColor = "white";
+    }
 
+  //})
+})
+
+}
 
 window.onload = function () {
   bookList = []; // book list container
@@ -74,6 +100,7 @@ window.onload = function () {
       // here you can call methods to laod or refresh the page 
       // loadBooks() or refreshPage()
       writeTable(bookList);
+      search();
 
 
     },
