@@ -8,27 +8,29 @@
 </head>
 <body>
    
-   <form id="search-books" method="get" action="">
+   <form  method="get" action="">
       
       <div id="searchBox">
          <h1>AZBooks</h1>
-         <input type="text" id="fname" name="fname" value="">
+         <input type="search" id="search" name="search" value="">
          <button type="button" id="btn">Search</button> 
-         <!-- <select id="categories" name="categories">
+         <select id="categories" name="categories">
             <option value="category">Category</option>
             <option value="action and adventure">Action and Adventure</option>
             <option value="art">Art</option>
             <option value="health">Health</option>
+            <option value="science fiction">Sience Fiction</option>
             <option value="science history">Sience History</option>
             <option value="boundary test">Boundary Test</option>
           </select>
-         <input type="submit" value="Filter">
-         <div style="float: right;">
-            <button>Add to cart</button>
-            <button>Reset the cart</button> -->
-            <!-- <img id="cart" src="images/shopping_cart.png" alt="shopping"> -->
-         </div>
-      </form>
+         <button type="button" onclick="categorize()">Filter</button>
+          <div style="float: right;">
+            <button type="button" id="addtocart" onclick="addCart()">Add to cart</button>
+            <button type="button" onclick="resetCart()">Reset the cart</button> 
+            <img id="cart" src="images/shopping_cart.png" alt="shopping"> 
+            <p id="qty">(0)</p>
+         </div> 
+      
 
       </div>
       <div id="listBox">
@@ -52,6 +54,6 @@
          </table>
       </div>   
   
-  
+   </form>
 </body>
 </html>
