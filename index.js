@@ -1,6 +1,6 @@
 var searched = [];
 var categorized = [];
-//var mutual = [];
+var result = [];
 var selectedId = "";
 var countbooks = 0;
 
@@ -42,10 +42,12 @@ function writeTable(list) {
     newCategory.innerHTML = bookList[i].category;
     var img = document.createElement('img');
     img.src = bookList[i].img;
+    img.classList.add("inverted");
     newImg.appendChild(img);
     for(var j=0; j<bookList[i].rating;j++){
     var rate = document.createElement('img');
     rate.src = "images/star-16.ico";
+    rate.classList.add("inverted");
     newRate.appendChild(rate);
     //newRate.innerHTML=bookList[i].rating;
     }
@@ -54,6 +56,7 @@ function writeTable(list) {
     for(var k=0; k< count;k++){
       var unrate = document.createElement('img');
       unrate.src = "images/outline-star-16.ico";
+      unrate.classList.add("inverted");
       newRate.appendChild(unrate);
       //newRate.innerHTML=bookList[i].rating;
       }
@@ -103,7 +106,7 @@ document.getElementById("btn").addEventListener('click',function(e){
     // }
     if(titles[j].toLowerCase().indexOf(term)!= -1 && term !== ""){
       //console.log("matches" + j);
-      //document.getElementById("myTable").rows[j+1].cells.item(2).style.backgroundColor = "red";
+      //document.getElementById("myTable").rows[j+1].cells.item(2).style.backgroundColor = "blue";
       
       searched.push(j);
       changeColor(j);
@@ -113,7 +116,6 @@ document.getElementById("btn").addEventListener('click',function(e){
     
     else{
        console.log("term is:" + term);
-       
       document.getElementById("myTable").rows[j+1].style.backgroundColor = "white";
     }
    }
@@ -160,7 +162,7 @@ function categorize(){
       //console.log(i);
       //categorized = true;
       //console.log(document.getElementById("myTable").rows[i+1].cells.item(2).innerHTML);
-     // document.getElementById("myTable").rows[i+1].cells.item(8).style.backgroundColor = "red";
+     // document.getElementById("myTable").rows[i+1].cells.item(8).style.backgroundColor = "blue";
       categorized.push(i);
      // console.log(categorized);
       changeColor(i);
@@ -178,16 +180,18 @@ function changeColor(id){
  // console.log("categorized: "+ categorized.length);
  // console.log(typeof id);
   if((searched.length === 0 && categorized.length !== 0) || (categorized.length === 0 && searched.length !== 0)){
-    document.getElementById("myTable").rows[id+1].style.backgroundColor = "red";
-    // for(var i=0; i<categorized.length;i++){
-    //   document.getElementById("myTable").rows[categorized[i]+1].style.backgroundColor = "red";
+    document.getElementById("myTable").rows[id+1].style.backgroundColor = "#5898d8";
+  
+    //  for(var j=0; j<document.getElementById("myTable").rows.length-1;j++){
+      
+    //   document.getElementById("myTable").rows[categorized[i]+1].style.backgroundColor = "blue";
     // }
     //console.log("searched is EMPTY");
     return;
   }
   // if(categorized.length === 0 && searched.length !== 0){
   //   for(var i=0; i<searched.length;i++){
-  //     document.getElementById("myTable").rows[searched[i]+1].style.backgroundColor = "red";
+  //     document.getElementById("myTable").rows[searched[i]+1].style.backgroundColor = "blue";
   //   }
   //   console.log("categorized is EMPTY");
   //   return;
@@ -199,13 +203,21 @@ function changeColor(id){
     for(var j =0; j<categorized.length;j++){
       if(searched[i] === categorized[j]){
        // console.log(searched[i] + "-----" + categorized[j]);
-        document.getElementById("myTable").rows[searched[i] + 1].style.backgroundColor = "red";
+        document.getElementById("myTable").rows[searched[i] + 1].style.backgroundColor = "blue";
         //mutual.push(searched[i]);
        // console.log("MUTUAL +");
       }
     }    
   }
 }
+}
+function changeMode(){
+  console.log("change mode");
+  document.documentElement.classList.toggle('dark-mode');
+  document.querySelectorAll('.inverted').forEach((result) => {
+    result.classList.toggle('invert');
+  })
+
 }
 window.onload = function () {
   bookList = []; // book list container

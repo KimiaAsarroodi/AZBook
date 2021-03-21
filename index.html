@@ -12,6 +12,10 @@
       
       <div id="searchBox">
          <h1>AZBooks</h1>
+         <label>
+            <input type="checkbox" onclick="changeMode()" class="darkmode" />
+            Dark Mode
+         </label>
          <input type="search" id="search" name="search" value="">
          <button type="button" id="btn">Search</button> 
          <select id="categories" name="categories">
@@ -21,7 +25,7 @@
             <option value="health">Health</option>
             <option value="science fiction">Sience Fiction</option>
             <option value="science history">Sience History</option>
-            <option value="boundary test">Boundary Test</option>
+            
           </select>
          <button type="button" onclick="categorize()">Filter</button>
           <div style="float: right;">
@@ -52,8 +56,9 @@
             <tbody>
             </tbody>
          </table>
-      </div>   
+      </div>
   
    </form>
+
 </body>
 </html>
