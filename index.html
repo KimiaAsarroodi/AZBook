@@ -16,8 +16,11 @@
             <input type="checkbox" onclick="changeMode()" class="darkmode" />
             Dark Mode
          </label>
+         <div id="searching">
          <input type="search" id="search" name="search" value="">
          <button type="button" id="btn">Search</button> 
+      </div>
+      <div id="filtering">
          <select id="categories" name="categories">
             <option value="category">Category</option>
             <option value="action and adventure">Action and Adventure</option>
@@ -25,15 +28,21 @@
             <option value="health">Health</option>
             <option value="science fiction">Sience Fiction</option>
             <option value="science history">Sience History</option>
+            <option value="boundary">Boundary Test</option>
             
           </select>
          <button type="button" onclick="categorize()">Filter</button>
-          <div style="float: right;">
+      </div>
+          <div id="shopping">
             <button type="button" id="addtocart" onclick="addCart()">Add to cart</button>
             <button type="button" onclick="resetCart()">Reset the cart</button> 
-            <img id="cart" src="images/shopping_cart.png" alt="shopping"> 
-            <p id="qty">(0)</p>
-         </div> 
+            
+            
+         </div>
+         <img id="cart" src="images/shopping_cart.png" alt="shopping"> 
+         <p id="qty">(0)</p>
+            
+         
       
 
       </div>
