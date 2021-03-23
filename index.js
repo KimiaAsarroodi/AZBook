@@ -1,3 +1,6 @@
+/*
+  Defining the global variables
+*/
 var bookList = [];
 var currentTable = [];
 var countSearched = 0;
