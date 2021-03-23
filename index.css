@@ -1,22 +1,41 @@
-﻿/* general text formatting */
-
-h1, h2, h3, nav, footer {
- font-family: Georgia, Cambria, "Times New Roman", serif;
+﻿h1, h2, h3, nav, footer {
+   font-family: Georgia, Cambria, "Times New Roman", serif;
+  }
+:root{
+   --dark-background-color: #111111;
+   --dark-text-color: white;
+   --dark-box: grey;
+   --dark-header:#424642;
+   --dark-table :#bbbbbb;
 }
+
 body {
    font-family: "Lucida Sans", Verdana, Arial, sans-serif;
    font-size: 80%;
-   background-color: white;
+   --background-color: white;
+   --box: #EBF4FB;
+   --text-color: #333333;
+   --header: #95BEF0;
+   --table:#FAFCFF;
+   background: var(--background-color);
+   color: var(--text-color);
 }
 
+body.theme-dark{
+   --background-color:var(--dark-background-color);
+   --text-color:var(--dark-text-color);
+   --box:var(--dark-box);
+   --header:var(--dark-header);
+   --table:var(--dark-table);
+}
 div#searchBox, div#listBox {
    margin: 0.25em auto;
-   background-color: #EBF4FB;
    padding: 1em;
-   border: 1pt solid #95BEF0;
+   border: 1pt solid var(--header);
    width: 80%;
 }
 div#searchBox { 
+   background-color:var(--box);
    margin-top: 1em; 
    display: flex;
    flex-wrap: wrap;
@@ -25,7 +44,7 @@ div#searchBox {
 }
 div#listBox { 
    margin-top: 1em; 
-   background-color: #FAFCFF;
+   background-color: var(--table);
    }
 
 table {
@@ -35,7 +54,7 @@ table {
    
 }
 table tbody td{
-   border-top: 1pt solid #95BEF0;   
+   border-top: 1pt solid var(--header);   
    line-height: 1.5em;
    vertical-align: middle;
    padding: 0.5em 0.75em;
@@ -47,7 +66,7 @@ table thead th {
    padding: 0.25em 0.75em; 
 }
 table thead {
-   background-color: #EBF4FB ; 
+   background-color: var(--box) ; 
 }
 
 table tbody td:first-child  {
@@ -65,7 +84,7 @@ table tbody td:nth-child(4)  {
 }
 
 caption {
-      background-color: #95BEF0;
+      background-color: var(--header);
       padding: 0.5em 0.5em; 
       font-weight: bold;
       font-size: 1.2em;
@@ -81,8 +100,7 @@ img#cart {
    height: 30px;
    width: 20px;
 }
-@media 
-only screen and (max-width: 967px),
+@media only screen and (max-width: 967px),
 (min-device-width: 967px) and (max-device-width: 1024px)  {
 
 	/* Force table to not be like tables anymore */
@@ -97,13 +115,12 @@ only screen and (max-width: 967px),
 		left: -9999px;
 	}
 	
-	tr { border-right: 1px solid #ccc; 
-      border-left: 1px solid #ccc;}
-   caption{display: block;}
-}
-.dark-mode {
-   filter: invert(100%); 
-}
-.invert{
-   filter: invert(100%);
+	tr { 
+      border-right: 1px solid #ccc; 
+      border-left: 1px solid #ccc;
+   }
+   
+      caption{
+      display: block;
+   }
 }
