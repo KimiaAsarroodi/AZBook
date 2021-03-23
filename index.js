@@ -77,13 +77,16 @@ function searchKey() {
   bookList.forEach(element => element.searching = false);
   const term = document.getElementById("search").value.toLowerCase();
   const titles = [];
+  if(currentTable.length === 0){
+    currentTable = bookList;
+  }
 
   for (var i = 1; i < document.getElementById("myTable").rows.length; i++) {
     titles.push(document.getElementById("myTable").rows[i].cells.item(2).innerHTML);
   }
   if (term === "") {
     countSearched = 0;
-    for (var k = 0; k < document.getElementById("myTable").rows.length; k++) {
+    for (var k = 1; k < document.getElementById("myTable").rows.length; k++) {
       if (document.getElementById("darkmode").checked === true) {
         document.getElementById("myTable").rows[k].style.backgroundColor = "#bbbbbb";
       }
@@ -182,6 +185,7 @@ function categorize() {
     if (document.getElementById("categories")
     .options[document.getElementById("categories").selectedIndex].value 
     === "category") {
+      searchKey();
       return;
     }
     for (var j = 0; j < bookList.length; j++) {
@@ -195,7 +199,7 @@ function categorize() {
     }
     deleteTable();
     writeTable(currentTable);
-    for (var i = 0; i < document.getElementById("myTable").rows.length; i++) {
+    for (var i = 1; i < document.getElementById("myTable").rows.length; i++) {
       if (document.getElementById("darkmode").checked === true) {
         document.getElementById("myTable").rows[i].style.backgroundColor = "#8e7f7f";
       }
@@ -208,6 +212,7 @@ function categorize() {
     if (document.getElementById("categories")
     .options[document.getElementById("categories").selectedIndex].value 
     === "category") {
+      
       return;
     }
     for (var i = 1; i < document.getElementById("myTable").rows.length; i++) {
