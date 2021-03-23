@@ -91,9 +91,13 @@ caption {
 }
 
 img {
-   height: 50px;
-   width: 40px;
+   height: 40px;
+   width: 30px;
    
+}
+img.bookImg{
+   height: 80px;
+   width: 70px;
 }
 
 img#cart {

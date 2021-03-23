@@ -46,6 +46,7 @@ function writeTable(list) {
     var img = document.createElement('img');
     img.src = list[i].img;
     newImg.appendChild(img);
+    img.classList.add("bookImg");
     for (var j = 0; j < list.rating; j++) {
       var rate = document.createElement('img');
       rate.src = "images/star-16.ico";
@@ -243,11 +244,8 @@ function changeMode() {
     }
   }
   else {
-    console.log("we are here");
     for (var i = 0; i < currentTable.length; i++) {
-      console.log(currentTable[i]);
       if (currentTable[i].searching === true) {
-        console.log("search is true");
         document.getElementById("myTable").rows[i + 1].style.backgroundColor = "#5898d8";
       }
       else {
